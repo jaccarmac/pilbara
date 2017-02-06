@@ -1,3 +1,6 @@
+//! A configurable MUD client using TCOD for rendering. Designed around support
+//! for Discworld MUD, though that won't be the only target by any means.
+
 extern crate argparse;
 
 use argparse::{ArgumentParser, Store};

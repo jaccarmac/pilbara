@@ -3,3 +3,9 @@
 name = "pilbara"
 version = "0.0.1"
 authors = ["Jacob MacDonald <jaccarmac@gmail.com"]
+
+[dependencies]
+
+argparse = "0.2.1"
+mio = "0.6"
+tcod = "0.10"

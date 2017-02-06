@@ -4,7 +4,7 @@ use argparse::{ArgumentParser, Store};
 
 fn main() {
     let mut host = "".to_string();
-    let mut port = 0;
+    let mut port: u16 = 0;
     {
         let mut ap = ArgumentParser::new();
         ap.set_description("Configurable MUD client in TCOD.");

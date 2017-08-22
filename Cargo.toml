@@ -6,6 +6,6 @@ authors = ["Jacob MacDonald <jaccarmac@gmail.com"]
 
 [dependencies]
 
-argparse = "0.2.1"
-mio = "0.6"
-tcod = "0.10"
+argparse = "=0.2.1"
+mio = "=0.6.4"
+tcod = "=0.10.0"

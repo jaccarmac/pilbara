@@ -34,10 +34,12 @@ fn can_convert_to_valid<
     validator: V,
 ) -> impl Fn(String) -> Result<(), String> {
     move |s| match match s.parse::<VT>() {
-        Ok(value) => match validator(value) {
-            Ok(_) => Ok(()),
-            Err(reason) => Err(reason.to_string()),
-        },
+        Ok(value) => {
+            match validator(value) {
+                Ok(_) => Ok(()),
+                Err(reason) => Err(reason.to_string()),
+            }
+        }
         Err(_) => Err(format!("\"{}\" is not valid", s)),
     } {
         ok @ Ok(_) => ok,

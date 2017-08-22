@@ -2,7 +2,7 @@
 
 name = "pilbara"
 version = "0.0.1"
-authors = ["Jacob MacDonald <jaccarmac@gmail.com"]
+authors = ["Jacob MacDonald <jaccarmac@gmail.com>"]
 
 [dependencies]
 

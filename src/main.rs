@@ -36,7 +36,7 @@ fn can_convert_to_valid<
 ) -> impl Fn(String) -> Result<(), String> {
     move |s| {
         s.parse::<VT>()
-            .or(Err(format!("\"{}\" is not valid", s)))
+            .or_else(|_| Err(format!("\"{}\" is not valid", s)))
             .and_then(|v| validator(v).map_err(|e| e.to_string()))
             .map_err(|e| format!("bad {}: {}", typedesc, e))
             .and(Ok(()))
@@ -44,8 +44,9 @@ fn can_convert_to_valid<
 }
 
 fn in_port_number_range(port_number: u32) -> Result<(), &'static str> {
-    match port_number <= 65536 {
-        true => Ok(()),
-        false => Err("out of range (0 - 65536)"),
+    if port_number <= 65_536 {
+        Ok(())
+    } else {
+        Err("out of range (0 - 65,536)")
     }
 }

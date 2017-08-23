@@ -3,8 +3,9 @@
 #![feature(conservative_impl_trait)]
 #![feature(use_extern_macros)]
 
-#[macro_use]
 extern crate clap;
+
+use clap::clap_app;
 
 fn main() {
     let matches = clap::clap_app!((clap::crate_name!()) =>

@@ -1,14 +1,12 @@
 #![feature(conservative_impl_trait)]
-#![feature(use_extern_macros)]
 
+#[macro_use]
 extern crate clap;
 
-use clap::clap_app;
-
 fn main() {
-    let matches = clap::clap_app!((clap::crate_name!()) =>
-        (version: clap::crate_version!())
-        (author: clap::crate_authors!())
+    let matches = clap_app!((crate_name!()) =>
+        (version: crate_version!())
+        (author: crate_authors!())
         (@arg host: * "MUD server to connect to:\tdiscworld.starturtle.net")
         (@arg port:
             *

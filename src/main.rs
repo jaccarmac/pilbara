@@ -1,5 +1,3 @@
-//! A configurable MUD client using TCOD for rendering. Designed around support
-//! for Discworld MUD, though that won't be the only target by any means.
 #![feature(conservative_impl_trait)]
 #![feature(use_extern_macros)]
 

@@ -6,6 +6,6 @@ authors = ["Jacob MacDonald <jaccarmac@gmail.com>"]
 
 [dependencies]
 
-clap = "=2.26.0"
-mio = "=0.6.10"
-tcod = "=0.11.0"
+clap = "*"
+mio = "*"
+tcod = "*"

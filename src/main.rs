@@ -1,18 +1,17 @@
-#![feature(conservative_impl_trait)]
-
 #[macro_use]
 extern crate clap;
 
 fn main() {
     let matches = clap_app!((crate_name!()) =>
-        (version: crate_version!())
-        (author: crate_authors!())
-        (@arg host: * "MUD server to connect to:\tdiscworld.starturtle.net")
-        (@arg port:
-            *
-            {can_convert_to_valid("port number", in_port_number_range)}
-            "port on the server to connect to:\t4242")
-        ).get_matches();
+    (version: crate_version!())
+    (author: crate_authors!())
+    (@arg host: * "MUD server to connect to:\tdiscworld.starturtle.net")
+    (@arg port:
+        *
+        {can_convert_to_valid("port number", in_port_number_range)}
+        "port on the server to connect to:\t4242")
+    )
+    .get_matches();
     println!(
         "Connecting to {}:{}",
         matches.value_of("host").unwrap(),
